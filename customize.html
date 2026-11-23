@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Customization - BIKEINFO</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f1f5f9;
+        }
+
+        .navbar {
+            background-color: #172554 !important;
+        }
+
+        .custom-card {
+            border: 2px solid #172554;
+            border-radius: 15px;
+        }
+
+        .custom-btn {
+            background-color: #f59e0b;
+            color: black;
+            border-radius: 20px;
+            border: none;
+        }
+
+        .custom-btn:hover {
+            background-color: #d97706;
+            color: white;
+        }
+
+        .custom-heading {
+            color: #172554;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            BIKEINFO
+        </a>
+        <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#bikeNavbar"
+        aria-controls="bikeNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+
+</button>
+
+        <div class="collapse navbar-collapse"id="bikeNavbar">
+            <div class="navbar-nav ms-auto">
+        
+        
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="bikes.html">Bikes</a>
+            <a class="nav-link" href="grid.html">Grid</a>
+            <a class="nav-link" href="compare.html">Comparison</a>
+            <a class="nav-link" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="typography.html">Typography</a>
+            <a class="nav-link" href="timetable.html">Timetable</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="customize.html">Customize</a>
+            <a class="nav-link" href="animated-gallery.html">Animated Gallery</a>
+             <a class="nav-link" href="timetable.html">Table</a>
+      
+        </div>
+
+    </div>
+</nav>
+
+<div class="container my-5">
+
+    <h1 class="text-center custom-heading mb-4">
+        Customize Bootstrap Components
+    </h1>
+
+    <div class="card custom-card mx-auto" style="max-width: 400px;">
+        <div class="card-body text-center">
+
+            <h4 class="card-title">Yamaha MT-15 V2</h4>
+
+            <p class="card-text">
+                Engine Capacity: 155 cc
+            </p>
+
+            <p class="card-text">
+                Type: Sports
+            </p>
+
+            <button class="btn custom-btn px-4"
+                    onclick="alert('Bike Details Opened!')">
+                View Details
+            </button>
+
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <button class="btn btn-success">
+            Bootstrap Button
+        </button>
+    </div>
+
+</div>
+
+<footer class="text-center bg-dark text-white p-3">
+    BIKEINFO | © 2026
+</footer>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

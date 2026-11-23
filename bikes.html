@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BIKEINFO - Bikes</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body data-bs-spy="scroll"
+      data-bs-target="#bikeScrollspy"
+      data-bs-offset="70"
+      tabindex="0"
+      style="position: relative;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            BIKEINFO
+        </a>
+        <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#bikeNavbar"
+        aria-controls="bikeNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+
+</button>
+
+        <div class="collapse navbar-collapse"id="bikeNavbar">
+            <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="bikes.html">Bikes</a>
+            <a class="nav-link" href="grid.html">Grid</a>
+            <a class="nav-link" href="compare.html">Comparison</a>
+            <a class="nav-link" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="typography.html">Typography</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="customize.html">Customize</a>
+            <a class="nav-link" href="animated-gallery.html">Animated Gallery</a>
+             <a class="nav-link" href="timetable.html">Table</a>
+    
+        </div>
+
+    </div>
+</nav>
+    <div class="container-fluid bg-dark text-white text-center p-4">
+        <h1>BIKEINFO</h1>
+        <p>Explore Different Bikes</p>
+    </div>
+
+    <div class="container mt-4">
+
+        <h2 class="text-center mb-4">Our All Bikes</h2>
+
+        <div class="row">
+
+            <div class="col-md-4 mb-3 bike-card"data-type="Commuter">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4>Hero Splendor Plus</h4>
+                        <p>Engine: 97.2 cc</p>
+                        <p>Type: Commuter</p>
+                        <button class="btn btn-primary"onclick="showDetails('splendor')">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3 bike-card"data-type="Commuter">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4>Honda Shine 125</h4>
+                        <p>Engine: 123.94 cc</p>
+                        <p>Type: Commuter</p>
+                        <button class="btn btn-primary"onclick="showDetails('shine')">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3 bike-card"data-type="Sports">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4>Yamaha Mt15 V2</h4>
+                        <p>Engine: 155 cc</p>
+                        <p>Type: Sport </p>
+                        <button class="btn btn-primary"onclick="showDetails('mt15')">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 bike-card"data-type="Cruiser">
+    <div class="card">
+        <div class="card-body text-center">
+            <h5 class="card-title">Royal Enfield Classic 350</h5>
+            <p class="card-text">Engine: 350 cc</p>
+            <p class="card-text">Type: Cruiser Bike</p>
+            <button class="btn btn-primary"onclick="showDetails('classic')">View Details</button>
+                    
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-3 bike-card"data-type="Commuter">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4>Honda Activa</h4>
+                        <p>Engine: 109.51 cc</p>
+                        <p>Type: Commuter</p>
+                        <button class="btn btn-primary"onclick="showDetails('activa')">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3 bike-card"data-type="Commuter">
+
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4>Suzuki Access 125</h4>
+                        <p>Engine: 124 cc</p>
+                        <p>Type: Commuter</p>
+                        <button class="btn btn-primary"onclick="showDetails('access')">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3 bike-card"data-type="Commuter">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4>Honda SP 125</h4>
+                        <p>Engine: 123.94 cc</p>
+                        <p>Type: Commuter</p>
+                        <button class="btn btn-primary"onclick="showDetails('shine')">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div class="container mt-5 mb-5">
+
+    <h2 class="text-center">Explore Bike Categories</h2>
+
+    <!-- Navigation Tabs -->
+    <ul class="nav nav-tabs mt-4">
+        <li class="nav-item">
+            <a class="nav-link active" href="#sports">Sports</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#commuter">Commuter</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#cruiser">Cruiser</a>
+        </li>
+    </ul>
+
+    <div class="border p-3">
+        <h4>Bike Categories</h4>
+        <p>Explore different types of bikes at BIKEINFO.</p>
+    </div>
+
+    <!-- Navigation Pills -->
+    <ul class="nav nav-pills mt-4">
+        <li class="nav-item">
+            <a class="nav-link active" href="bikes.html">All Bikes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="timetable.html">Comparison</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery</a>
+        </li>
+    </ul>
+
+</div>
+<div class="container mt-5 mb-5">
+
+    <h2 class="text-center mb-4">
+        BIKEINFO Progress Bars
+    </h2>
+
+    <!-- A and B: Progress Bars with Labels -->
+
+    <h5>Hero Splendor Plus</h5>
+    <div class="progress mb-3">
+        <div class="progress-bar bg-success"
+             style="width: 85%">85%</div>
+    </div>
+
+    <h5>Honda Shine</h5>
+    <div class="progress mb-3">
+        <div class="progress-bar bg-info"
+             style="width: 70%">70%</div>
+    </div>
+    <h5>Royal Enfield Classic 350 </h5>
+    <div class="progress mb-3">
+        <div class="progress-bar bg-warning"
+             style="width: 90%">90%</div>
+    </div>
+
+    <!-- C: Striped and Animated Progress Bars -->
+
+    <h5>Striped Progress Bar</h5>
+    <div class="progress mb-3">
+        <div class="progress-bar progress-bar-striped bg-danger"
+             style="width: 65%">65%</div>
+    </div>
+
+    <h5>Animated Progress Bar</h5>
+    <div class="progress mb-3">
+        <div class="progress-bar progress-bar-striped
+                    progress-bar-animated bg-primary"
+             style="width: 75%">75%</div>
+    </div>
+
+    <!-- D: Dynamic Progress Bar -->
+
+    <h4 class="mt-4">Dynamic Progress Bar</h4>
+
+    <div class="progress mb-3">
+        <div id="dynamicBar"
+             class="progress-bar bg-success"
+             style="width: 0%">0%</div>
+    </div>
+
+    <button class="btn btn-primary"
+            onclick="increaseProgress()">
+        Increase Progress
+    </button>
+
+    <button class="btn btn-danger"
+            onclick="resetProgress()">
+        Reset
+    </button>
+
+</div>
+
+<script>
+    let progress = 0;
+
+    function increaseProgress() {
+        if (progress < 100) {
+            progress += 10;
+        }
+
+        document.getElementById("dynamicBar").style.width =
+            progress + "%";
+
+        document.getElementById("dynamicBar").innerHTML =
+            progress + "%";
+    }
+
+    function resetProgress() {
+        progress = 0;
+
+        document.getElementById("dynamicBar").style.width =
+            "0%";
+
+        document.getElementById("dynamicBar").innerHTML =
+            "0%";
+    }
+</script>
+<div class="container mt-4">
+  <h3>Bike Actions</h3>
+
+  <button class="btn btn-success" data-bs-toggle="modal"
+    data-bs-target="#saveModal">
+    Save Bike
+  </button>
+
+  <button class="btn btn-danger" data-bs-toggle="modal"
+    data-bs-target="#deleteModal">
+    Delete Bike
+  </button>
+</div>
+
+<!-- Save Modal -->
+<div class="modal fade" id="saveModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Save Confirmation</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to save this bike?
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button class="btn btn-success" data-bs-dismiss="modal">
+          Yes, Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Delete Confirmation</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this bike?
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button class="btn btn-danger" data-bs-dismiss="modal">
+          Yes, Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+
+  <h2 class="text-center">BIKEINFO Categories</h2>
+
+  <nav id="bikeScrollspy" class="nav nav-pills mb-3">
+    <a class="nav-link" href="#sports">Sports Bikes</a>
+    <a class="nav-link" href="#commuter">Commuter Bikes</a>
+    <a class="nav-link" href="#cruiser">Cruiser Bikes</a>
+  </nav>
+
+  <div id="sports" class="p-4 bg-light" style="height:250px;">
+    <h3>Sports Bikes</h3>
+    <p>Explore sports bikes.</p>
+  </div>
+
+  <div id="commuter" class="p-4 bg-secondary text-white"
+       style="height:250px;">
+    <h3>Commuter Bikes</h3>
+    <p>Explore commuter bikes.</p>
+  </div>
+
+  <div id="cruiser" class="p-4 bg-light"
+       style="height:250px;">
+    <h3>Cruiser Bikes</h3>
+    <p>Explore cruiser bikes.</p>
+  </div>
+
+</div>
+<div class="container mt-4">
+  <h3>Bike Information</h3>
+
+  <button class="btn btn-primary"
+          data-bs-toggle="tooltip"
+          title="Explore all available bikes"
+          onclick="window.location.href='./bikes.html'">
+    View Bikes
+  </button>
+
+  <button type="button" class="btn btn-success"
+            data-bs-toggle="tooltip"
+              title="compare bikes"
+               onclick="window.location.href='./compare.html'">
+    Compare Bikes
+  </button>
+
+  <button class="btn btn-danger"
+          data-bs-toggle="tooltip"
+          title="See bike details"
+          onclick="window.location.href='./bikes.html'">
+    Bike Details
+  </button>
+</div>
+
+<script>
+var tooltipTriggerList =
+  [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+
+tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl);
+});
+</script>
+<div class="container mt-4">
+  <h3> Icons</h3>
+
+  <p><i class="fa-solid fa-motorcycle"></i> Bikes</p>
+
+  <p><i class="fa-solid fa-gauge-high"></i> Performance</p>
+
+  <p><i class="fa-solid fa-heart"></i> Favourite</p>
+
+  <p><i class="fa-solid fa-magnifying-glass"></i> Search</p>
+
+  <p><i class="fa-solid fa-user"></i> User</p>
+</div>
+<script>
+function filterBikes(type) {
+    let bikes = document.querySelectorAll(".bike-card");
+
+    bikes.forEach(function(bike) {
+        if (bike.dataset.type === type) {
+            bike.style.display = "block";
+        } else {
+            bike.style.display = "none";
+        }
+    });
+}
+</script>
+<script>
+function filterBikes(type) {
+    document.querySelectorAll(".bike-card").forEach(function(bike) {
+        bike.style.display =
+            bike.dataset.type === type ? "" : "none";
+    });
+}
+
+const params = new URLSearchParams(window.location.search);
+const selectedType = params.get("type");
+const searchTerm = (params.get("search") || "").toLowerCase();
+
+document.querySelectorAll(".bike-card").forEach(function(bike) {
+
+    const matchesType =
+        !selectedType || bike.dataset.type === selectedType;
+
+    const matchesSearch =
+        !searchTerm || bike.textContent.toLowerCase().includes(searchTerm);
+
+    bike.style.display =
+        matchesType && matchesSearch ? "" : "none";
+});
+</script>
+<div class="modal fade" id="bikeModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Hero Splendor Plus - Details</h5>
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <p><b>Engine Capacity:</b> 97.2 cc</p>
+                <p><b>Engine Type:</b> Air-cooled, 4-stroke</p>
+                <p><b>Maximum Power:</b> 5.9 kW</p>
+                <p><b>Maximum Torque:</b> 8.05 Nm</p>
+                <p><b>Transmission:</b> 4-speed</p>
+                <p><b>Fuel Tank:</b> 9.8 L</p>
+                <p><b>Weight:</b> 112 kg</p>
+                <p><b>Brakes:</b> Drum</p>
+                <p><b>ABS:</b> No</p>
+                <p><strong>Ex-showroom Price:</strong> ₹77,813</p>
+<p><strong>On-road Price:</strong>₹90,348 </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="bikeDetailsModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="bikeTitle">Bike Details</h5>
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body" id="bikeDetails">
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+function showDetails(bike) {
+    if (bike === 'splendor') {
+        let modal = new bootstrap.Modal(
+            document.getElementById('bikeModal')
+        );
+        modal.show();
+    }
+}
+const bikeSpecifications = {
+    splendor: {
+        name: "Hero Splendor Plus",
+        details: [
+            "Engine Capacity: 97.2 cc",
+            "Engine Type: Air-cooled, 4-stroke",
+            "Maximum Power: 5.9 kW",
+            "Maximum Torque: 8.05 Nm",
+            "Transmission: 4-speed",
+            "Fuel Tank: 9.8 L",
+            "Weight: 112 kg",
+            "Brakes: Drum",
+            "ABS: No",
+            "Ex-showroom Price: ₹77,813",
+            "On-road Price: ₹90,348"
+        ]
+    },
+
+    classic: {
+        name: "Royal Enfield Classic 350",
+        details: [
+            "Engine Capacity: 350 cc",
+            "Engine Type: Air-oil cooled, single-cylinder",
+            "Maximum Power: 20.2 bhp",
+            "Maximum Torque: 27 Nm",
+            "Transmission: 5-speed",
+            "Fuel Tank: 13 L",
+            "Weight: 195 kg",
+            "Brakes: Disc",
+            "ABS: Dual-channel",
+             "Ex-showroom Price: ₹1,88,934",
+            "On-road Price: ₹2,04,000"
+        ]
+    },
+
+    activa: {
+        name: "Honda Activa",
+        details: [
+            "Engine Capacity: 109.51 cc",
+            "Engine Type: Air-cooled, 4-stroke",
+            "Maximum Power: 7.99 PS",
+            "Transmission: Automatic (CVT)",
+            "Fuel Tank: 5.3 L",
+            "Weight: 106 kg",
+            "Brakes: Drum",
+            "ABS: No",
+            "Ex-showroom Price: ₹76,083",
+" On-road Price: ₹98,864"
+        ]
+    },
+
+    access: {
+        name: "Suzuki Access 125",
+        details: [
+            "Engine Capacity: 124 cc",
+            "Engine Type: Air-cooled, 4-stroke",
+            "Maximum Power: 8.4 PS",
+            "Maximum Torque: 10.2 Nm",
+            "Transmission: Automatic (CVT)",
+            "Fuel Tank: 5.3 L",
+            "Weight: 103 kg",
+            "Brakes: Drum / Disc (variant dependent)",
+            "ABS: No",
+            "Ex-showroom Price: ₹83,086",
+"On-road Price: ₹1,03,479"
+        ]
+    },
+
+    sp125: {
+        name: "Honda SP 125",
+        details: [
+            "Engine Capacity: 123.94 cc",
+            "Engine Type: Air-cooled, 4-stroke",
+            "Maximum Power: 10.9 PS",
+            "Maximum Torque: 10.9 Nm",
+            "Transmission: 5-speed",
+            "Fuel Tank: 11.2 L",
+            "Weight: 116 kg",
+            "Brakes: Drum / Disc (variant dependent)",
+            "ABS: No",
+            "Ex-showroom Price: ₹89,279",
+" On-road Price: ₹97,195"
+        ]
+    },
+
+    shine: {
+        name: "Honda Shine 125",
+        details: [
+            "Engine Capacity: 123.94 cc",
+            "Engine Type: Air-cooled, 4-stroke",
+            "Maximum Power: 10.5 PS",
+            "Maximum Torque: 11 Nm",
+            "Transmission: 5-speed",
+            "Fuel Tank: 10.5 L",
+            "Weight: 113 kg",
+            "Brakes: Drum / Disc (variant dependent)",
+            "ABS: No",
+            "Ex-showroom Price: ₹83,422",
+" On-road Price: ₹97,288"
+        ]
+    },
+
+    mt15: {
+        name: "Yamaha MT-15 V2",
+        details: [
+            "Engine Capacity: 155 cc",
+            "Engine Type: Liquid-cooled, 4-valve",
+            "Maximum Power: 18.4 PS",
+            "Maximum Torque: 14.1 Nm",
+            "Transmission: 6-speed",
+            "Fuel Tank: 10 L",
+            "Weight: 141 kg",
+            "Brakes: Disc",
+            "ABS: Dual-channel",
+            "Ex-showroom Price: ₹1,65,610",
+" On-road Price: ₹1,90,333"
+        ]
+    }
+};
+
+function showDetails(bike) {
+    const selectedBike = bikeSpecifications[bike];
+
+    if (!selectedBike) return;
+
+    document.getElementById("bikeTitle").textContent =
+        selectedBike.name;
+
+    document.getElementById("bikeDetails").innerHTML =
+        selectedBike.details.map(detail =>
+            `<p class="mb-2">${detail}</p>`
+        ).join("");
+
+    const modal = new bootstrap.Modal(
+        document.getElementById("bikeDetailsModal")
+    );
+
+    modal.show();
+}
+</script>
+</body>
+</html>

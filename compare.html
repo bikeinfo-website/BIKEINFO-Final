@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Bikes - BIKEINFO</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            BIKEINFO
+        </a>
+        <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#bikeNavbar"
+        aria-controls="bikeNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+
+</button>
+
+        <div class="collapse navbar-collapse"id="bikeNavbar">
+            <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="bikes.html">Bikes</a>
+            <a class="nav-link" href="grid.html">Grid</a>
+            <a class="nav-link" href="compare.html">Comparison</a>
+            <a class="nav-link" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="typography.html">Typography</a>
+            <a class="nav-link" href="timetable.html">Timetable</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="customize.html">Customize</a>
+            <a class="nav-link" href="animated-gallery.html">Animated Gallery</a>
+             <a class="nav-link" href="timetable.html">Table</a>
+    
+        </div>
+
+    </div>
+</nav>
+        <a class="navbar-brand fw-bold" href="index.html">BIKEINFO</a>
+        <a href="bikes.html" class="btn btn-outline-light">All Bikes</a>
+    </div>
+</nav>
+
+<div class="container my-5">
+
+    <h1 class="text-center mb-4">Compare Bikes</h1>
+
+    <div class="row mb-4">
+
+        <div class="col-md-5 mb-3">
+            <label class="form-label fw-bold">Select First Bike</label>
+            <select id="bike1" class="form-select">
+                <option value="">Choose Bike 1</option>
+            </select>
+        </div>
+
+        <div class="col-md-2 text-center d-flex align-items-end justify-content-center mb-3">
+            <h4>VS</h4>
+        </div>
+
+        <div class="col-md-5 mb-3">
+            <label class="form-label fw-bold">Select Second Bike</label>
+            <select id="bike2" class="form-select">
+                <option value="">Choose Bike 2</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="text-center mb-4">
+        <button class="btn btn-primary px-5" onclick="compareBikes()">
+            Compare Now
+        </button>
+    </div>
+
+    <div id="comparison"></div>
+
+</div>
+
+<footer class="bg-dark text-white text-center p-3 mt-5">
+    <h5>BIKEINFO</h5>
+    <p class="mb-0">© 2026 BIKEINFO. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const bikes = {
+    splendor: {
+        name: "Hero Splendor Plus",
+        specs: ["97.2 cc", "Air-cooled, 4-stroke", "5.9 kW", "8.05 Nm", "4-speed", "9.8 L", "112 kg", "Drum", "No", "₹77,813", "₹84,830 - ₹90,348"]
+    },
+
+    classic: {
+        name: "Royal Enfield Classic 350",
+        specs: ["349 cc", "Air-oil cooled, single-cylinder", "20.2 bhp", "27 Nm", "5-speed", "13 L", "195 kg", "Disc", "Dual-channel", "₹1,88,934", "₹2,04,000 onwards"]
+    },
+
+    activa: {
+        name: "Honda Activa",
+        specs: ["109.51 cc", "Air-cooled, 4-stroke", "7.99 PS", "9.05 Nm", "Automatic (CVT)", "5.3 L", "106 kg", "Drum", "No", "₹76,083", "₹82,875 - ₹98,864"]
+    },
+
+    access: {
+        name: "Suzuki Access 125",
+        specs: ["124 cc", "Air-cooled, 4-stroke", "8.4 PS", "10.2 Nm", "Automatic (CVT)", "5.3 L", "103 kg", "Drum / Disc (variant dependent)", "No", "₹83,086", "₹88,924 - ₹1,03,479"]
+    },
+
+    sp125: {
+        name: "Honda SP 125",
+        specs: ["123.94 cc", "Air-cooled, 4-stroke", "10.9 PS", "10.9 Nm", "5-speed", "11.2 L", "116 kg", "Drum / Disc (variant dependent)", "No", "₹89,279", "₹97,195 onwards"]
+    },
+
+    shine: {
+        name: "Honda Shine 125",
+        specs: ["123.94 cc", "Air-cooled, 4-stroke", "10.5 PS", "11 Nm", "5-speed", "10.5 L", "113 kg", "Drum / Disc (variant dependent)", "No", "₹83,422", "₹97,288 onwards"]
+    },
+
+    mt15: {
+        name: "Yamaha MT-15 V2",
+        specs: ["155 cc", "Liquid-cooled, 4-valve", "18.4 PS", "14.1 Nm", "6-speed", "10 L", "141 kg", "Disc", "Dual-channel", "₹1,65,610", "₹1,90,333 onwards"]
+    }
+};
+const labels = [
+    "Engine Capacity",
+    "Engine Type",
+    "Maximum Power",
+    "Maximum Torque",
+    "Transmission",
+    "Fuel Tank",
+    "Weight",
+    "Brakes",
+    "ABS",
+    "Ex-Showroom Price",
+    "On-Road Price"
+];
+
+const bike1 = document.getElementById("bike1");
+const bike2 = document.getElementById("bike2");
+
+for (let key in bikes) {
+    bike1.innerHTML += `<option value="${key}">${bikes[key].name}</option>`;
+    bike2.innerHTML += `<option value="${key}">${bikes[key].name}</option>`;
+}
+
+function compareBikes() {
+
+    const first = bike1.value;
+    const second = bike2.value;
+
+    if (first === "" || second === "") {
+        alert("Please select both bikes!");
+        return;
+    }
+
+    if (first === second) {
+        alert("Please select two different bikes!");
+        return;
+    }
+
+    let output = `
+        <h3 class="text-center mb-3">Comparison Result</h3>
+
+        <div class="table-responsive">
+        <table class="table table-bordered table-striped text-center bg-white">
+
+            <thead class="table-dark">
+                <tr>
+                    <th>Specifications</th>
+                    <th>${bikes[first].name}</th>
+                    <th>${bikes[second].name}</th>
+                </tr>
+            </thead>
+
+            <tbody>
+    `;
+
+    for (let i = 0; i < labels.length; i++) {
+        output += `
+            <tr>
+                <th>${labels[i]}</th>
+                <td>${bikes[first].specs[i]}</td>
+                <td>${bikes[second].specs[i]}</td>
+            </tr>
+        `;
+    }
+
+    output += `
+            </tbody>
+        </table>
+        </div>
+    `;
+
+    document.getElementById("comparison").innerHTML = output;
+}
+
+</script>
+
+</body>
+</html>
