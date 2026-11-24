@@ -1,0 +1,58 @@
+body {
+  background-color: #f1f5f9;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #172554;
+  text-align: center;
+}
+
+.navbar {
+  background-color: #172554;
+}
+.navbar a {
+  color: white;
+}
+
+.btn-primary {
+  background-color: #172554;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+}
+.btn-primary:hover {
+  background-color: #f59e0b;
+}
+
+footer {
+  background-color: #172554;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  padding: 12px;
+  /* Common Page Fade Transition */
+
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+body.page-exit {
+    opacity: 0;
+}
+}
+/* Pages Dropdown Text Visibility */
+.dropdown-menu .dropdown-item {
+    color: #212529 !important;
+    background-color: white;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: #000 !important;
+    background-color: #e9ecef;
+}
